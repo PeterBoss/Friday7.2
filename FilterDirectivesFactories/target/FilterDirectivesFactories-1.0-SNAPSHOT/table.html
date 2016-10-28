@@ -1,0 +1,18 @@
+<div ng-controller="ExamController">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th ng-repeat="course in studentsInfo.allCourses">{{course.courseName}}</th>
+                <th>Average</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="student in studentsInfo.students">
+                <td>{{student.name}}</td>
+                <td ng-repeat="grade in student.grades">{{grade.grade}}</td>
+                <td>{{student.grades| average}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
